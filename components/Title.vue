@@ -6,7 +6,7 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     h1{
       font-size: 3rem;
       line-height: 4.25rem;

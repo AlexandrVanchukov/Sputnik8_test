@@ -1,8 +1,8 @@
 export enum ActivityTypes {
-    tour = "tour",
-    entry_ticket = "entry_ticket",
-    transfer = "transfer",
-    composite_activity = "composite_activity"
+    tour = "тур",
+    entry_ticket = "входной билет",
+    transfer = "трансфер",
+    composite_activity = "сборная экскурсия"
 };
 
 

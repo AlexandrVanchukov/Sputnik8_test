@@ -19,4 +19,12 @@
     *{
         font-family: "PT Sans Caption", sans-serif;
     }
+    main{
+        max-width: 70%;
+        margin: auto;
+    }
+    footer{
+        width: fit-content;
+        margin: auto;
+    }
   </style>
