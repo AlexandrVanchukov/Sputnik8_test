@@ -2,16 +2,17 @@
     <app-layout>
       <Title/>
       
-      <DropDownList
-      :options="cities"
-      v-model="selectedCity"
-      :disabled="loadingCities"
-      @update:modelValue="fetchTours"
-      />
-      
-      <Input v-model="searchQuery" placeholder="Поиск экскурсии" />
-      
-      
+      <div class='search-bar'>
+        <DropDownList
+        :options="cities"
+        v-model="selectedCity"
+        :disabled="loadingCities"
+        @update:modelValue="fetchTours"
+        />
+
+        <Input v-model="searchQuery" placeholder="Поиск экскурсии" />
+      </div>
+       
       <div class="tour-grid">
         <TourCard v-for="tour in filteredTours" :key="tour.id" :tour="tour" />
       </div>
@@ -166,12 +167,25 @@ cities.value = [
 onMounted(fetchCities);
 </script>
 
-<style lang="scss">
-.tour-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-  justify-content: center;
-  padding-top: 5.625rem;
-}
+<style lang="scss" scoped>
+    .tour-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
+        gap: 16px;
+        justify-content: center;
+        padding-top: 5.625rem;
+        max-width: max(1400px, 70%);
+        margin: auto;
+    }
+
+    .search-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+        gap: 16px;
+        justify-content: center;
+        justify-items: center;
+        padding-top: 3.125rem;
+        margin: auto;
+        max-width: min(900px, 70%);
+    }
 </style>

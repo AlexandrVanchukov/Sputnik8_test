@@ -35,8 +35,6 @@ import type { ActivityTypes } from '~/types/product';
     border-radius: 5px;
     max-width: 100%;
     text-align: left;
-
-
   }
   
   .tour-image {
