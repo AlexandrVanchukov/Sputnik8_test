@@ -10,7 +10,7 @@
         @update:modelValue="fetchTours"
         />
 
-        <Input v-model="searchQuery" placeholder="Поиск экскурсии" />
+        <Input v-model="searchQuery" placeholder="Введите название экскурсии" />
       </div>
       <div class="tours-container">
         <div v-if="filteredTours.length === 0 && selectedCity && !loadingTours" class="no-tours">

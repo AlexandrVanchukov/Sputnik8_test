@@ -7,7 +7,7 @@
       </p>
       <h2 class="tour-title">{{ tour.title }}</h2>
       <p class="tour-price">от {{ tour.netto_price }}</p>
-      <p class="tour-type">за {{tour.activity_type}}</p>
+      <p class="tour-type">за {{activity_type_str_rus}}</p>
     </div>
   </template>
   
@@ -28,6 +28,9 @@ import { ActivityTypes } from '~/types/product';
         netto_price: string;
     };
   }>();
+  
+  const activity_type_str_rus = ActivityTypes[props.tour.activity_type];
+
   </script>
   
   <style lang="scss" scoped>
