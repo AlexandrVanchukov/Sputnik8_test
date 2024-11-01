@@ -5,7 +5,7 @@
         <slot />
       </main>
       <footer>
-        created by Vanchukov Alexandr
+        <p>created by Vanchukov Alexandr</p>
       </footer>
     </div>
   </template>
@@ -24,7 +24,11 @@
         margin: auto;
     }
     footer{
-        width: fit-content;
-        margin: auto;
+      position: relative;
+      top: 10px;
+        p {
+          display: block;
+          text-align: center;
+        }
     }
   </style>

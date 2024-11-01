@@ -11,7 +11,9 @@ export type Product = {
     title: string,
     activity_type: ActivityTypes,
     reviews: number,
-    image_big: string,
+    main_photo: {
+        big: string;
+    },
     customers_review_rating: number,
     netto_price: string,
 }

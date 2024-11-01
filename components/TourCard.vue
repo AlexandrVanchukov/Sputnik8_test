@@ -1,6 +1,6 @@
 <template>
     <div class="tour-card">
-      <img :src="tour.image_big" alt="Tour Image" class="tour-image" />
+      <img :src="tour.main_photo.big" alt="Tour Image" class="tour-image" />
       <p class="tour-rating">
          {{ tour.customers_review_rating }}
          <span class="tour-rating-count">({{tour.reviews}})</span>
@@ -13,7 +13,7 @@
   
   <script lang="ts" setup>
   import { defineProps } from 'vue';
-import type { ActivityTypes } from '~/types/product';
+import { ActivityTypes } from '~/types/product';
   
   const props = defineProps<{
     tour: {
@@ -21,7 +21,9 @@ import type { ActivityTypes } from '~/types/product';
         title: string;
         activity_type: ActivityTypes;
         reviews: number;
-        image_big: string;
+        main_photo: {
+          big: string;
+        };
         customers_review_rating: number;
         netto_price: string;
     };
