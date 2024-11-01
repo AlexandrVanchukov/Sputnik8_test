@@ -1,6 +1,6 @@
 <template>
     <div class="tour-card">
-      <img :src="tour.main_photo" alt="Tour Image" class="tour-image" />
+      <img :src="tour.image_big" alt="Tour Image" class="tour-image" />
       <p class="tour-rating"> {{ tour.customers_review_rating }}</p>
       <h2 class="tour-title">{{ tour.title }}</h2>
       <p class="tour-price">от {{ tour.netto_price }}</p>
@@ -18,7 +18,7 @@ import type { ActivityTypes } from '~/types/product';
         id: number;
         title: string;
         activity_type: ActivityTypes;
-        main_photo: string;
+        image_big: string;
         customers_review_rating: number;
         netto_price: string;
     };

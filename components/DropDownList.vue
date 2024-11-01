@@ -22,14 +22,14 @@ import type { City } from '~/types/city';
 
 const props = defineProps<{
   options: City[];
-  modelValue: string;
+  modelValue: number;
 }>();
 
 const emits = defineEmits(["update:modelValue"]);
 
 const isOpen = ref(false);
 const selectedOption = computed(() => {
-  const selected = props.options.find(option => option.name === props.modelValue);
+  const selected = props.options.find(option => option.id === props.modelValue);
   return selected ? selected.name : '';
 });
 
@@ -45,7 +45,7 @@ function toggleDropdown() {
 
 function selectOption(option: City) {
   closeDropdown();
-  emits("update:modelValue", option.name);
+  emits("update:modelValue", option.id);
 }
 
 function handleClickOutside(event: MouseEvent) {

@@ -10,7 +10,7 @@ export type Product = {
     id: number,
     title: string,
     activity_type: ActivityTypes,
-    main_photo: string,
+    image_big: string,
     customers_review_rating: number,
     netto_price: string,
 }
