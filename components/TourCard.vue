@@ -1,11 +1,13 @@
 <template>
     <div class="tour-card">
       <img :src="tour.image_big" alt="Tour Image" class="tour-image" />
-      <p class="tour-rating"> {{ tour.customers_review_rating }}</p>
+      <p class="tour-rating">
+         {{ tour.customers_review_rating }}
+         <span class="tour-rating-count">({{tour.reviews}})</span>
+      </p>
       <h2 class="tour-title">{{ tour.title }}</h2>
       <p class="tour-price">от {{ tour.netto_price }}</p>
       <p class="tour-type">за {{tour.activity_type}}</p>
-      
     </div>
   </template>
   
@@ -18,6 +20,7 @@ import type { ActivityTypes } from '~/types/product';
         id: number;
         title: string;
         activity_type: ActivityTypes;
+        reviews: number;
         image_big: string;
         customers_review_rating: number;
         netto_price: string;
@@ -70,16 +73,16 @@ import type { ActivityTypes } from '~/types/product';
     line-height: 2rem;
   }
 
-  .tour-type{
+  .tour-type, .tour-rating-count{
     color: $light-gray;
     font-size: 0.75rem;
     line-height: 1.375rem;
   }
-.tour-rating::before{
+  
+  .tour-rating::before{
     content: url(/public/star.svg);
     position: relative;
     right: 6px;
     top: 2px;
-}
-  
+  }
   </style>
